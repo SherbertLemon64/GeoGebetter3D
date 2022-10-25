@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.IO;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
+using OpenTK.Windowing.Common;
 
 namespace GeoGebetter
 {
 	// A simple class meant to help create shaders.
-    public class Shader
+    public abstract class Shader
     {
-        public readonly int Handle;
+        public int Handle { get; protected set; }
 
-        private readonly Dictionary<string, int> _uniformLocations;
+        private Dictionary<string, int> _uniformLocations;
 
+        public abstract void OnLoad();
+        
         // This is how you create a simple shader.
         // Shaders are written in GLSL, which is a language very similar to C in its semantics.
         // The GLSL source is compiled *at runtime*, so it can optimize itself for the graphics card it's currently being used on.
         // A commented example of GLSL can be found in shader.vert.
-        public Shader(string vertPath, string fragPath)
+        protected void ConstructShader(string vertPath, string fragPath)
         {
             // There are several different types of shaders, but the only two you need for basic rendering are the vertex and fragment shaders.
             // The vertex shader is responsible for moving around vertices, and uploading that data to the fragment shader.
@@ -26,7 +29,7 @@ namespace GeoGebetter
             //   The fragment shader is what we'll be using the most here.
 
             // Load vertex shader and compile
-            var shaderSource = File.ReadAllText(vertPath);
+            var shaderSource = ResourceManager.ReadAllText("glsl\\" + vertPath);
 
             // GL.CreateShader will create an empty shader (obviously). The ShaderType enum denotes which type of shader will be created.
             var vertexShader = GL.CreateShader(ShaderType.VertexShader);
@@ -38,7 +41,7 @@ namespace GeoGebetter
             CompileShader(vertexShader);
 
             // We do the same for the fragment shader.
-            shaderSource = File.ReadAllText(fragPath);
+            shaderSource = ResourceManager.ReadAllText("glsl\\" + fragPath);
             var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
             GL.ShaderSource(fragmentShader, shaderSource);
             CompileShader(fragmentShader);
@@ -115,10 +118,7 @@ namespace GeoGebetter
         }
 
         // A wrapper function that enables the shader program.
-        public void Use()
-        {
-            GL.UseProgram(Handle);
-        }
+        public abstract void Use(FrameEventArgs e);
 
         // The shader sources provided with this project use hardcoded layout(location)-s. If you want to do it dynamically,
         // you can omit the layout(location=X) lines in the vertex shader, and use this in VertexAttribPointer instead of the hardcoded values.

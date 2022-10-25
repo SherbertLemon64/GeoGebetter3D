@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dvtkveOvbfjJV7mZ3sILv27ZaXfmGwAEPLg2Knc+LhvkhMkCaWhUkwtWnvgvc6DddXbmOXoCeBmL89hkmW76uA==",
+  "dgSpecHash": "Jwb3WQGPb/dKjRLnH31NCTxUPlyikcay2sT7gAO2PF9nG5DqI9qBwu8YFGpj1CzP4RXmMITpmiyoJAXkMMX3+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thoma\\Documents\\GitHub\\GeoGebetter\\GeoGebetter\\GeoGebetter.csproj",
+  "projectFilePath": "C:\\Users\\thoma\\Documents\\GitHub\\GeoGebetter\\GeoGebetter3D\\GeoGebetter\\GeoGebetter.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\thoma\\.nuget\\packages\\imgui.net\\1.87.3\\imgui.net.1.87.3.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\opentk\\4.7.5\\opentk.4.7.5.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\opentk.compute\\4.7.5\\opentk.compute.4.7.5.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\opentk.core\\4.7.5\\opentk.core.4.7.5.nupkg.sha512",
@@ -15,6 +16,9 @@
     "C:\\Users\\thoma\\.nuget\\packages\\opentk.windowing.common\\4.7.5\\opentk.windowing.common.4.7.5.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\opentk.windowing.desktop\\4.7.5\\opentk.windowing.desktop.4.7.5.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.7.5\\opentk.windowing.graphicslibraryframework.4.7.5.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\stbimagesharp\\2.27.13\\stbimagesharp.2.27.13.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []
